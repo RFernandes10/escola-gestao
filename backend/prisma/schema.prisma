@@ -1,0 +1,49 @@
+// prisma/schema.prisma
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum Role {
+    DIRECTOR
+    USER
+}
+
+enum EmployeeStatus {
+    ACTIVE
+    INACTIVE
+}
+
+model User {
+    id        String   @id @default(uuid())
+    email     String   @unique
+    password  String
+    name      String
+    role      Role     @default(USER)
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    @@map("users")
+}
+
+model Employee {
+    id            String         @id @default(uuid())
+    fullName      String         @map("full_name")
+    cpf           String?        @unique @map("cpf")
+    position      String
+    department    String
+    email         String         @unique
+    phone        String
+    admissionDate DateTime       @map("admission_date")
+    photoUrl     String?        @map("photo_url")
+    status       EmployeeStatus @default(ACTIVE)
+    createdAt    DateTime       @default(now()) @map("created_at")
+    updatedAt    DateTime       @updatedAt @map("updated_at")
+
+    @@map("employees")
+}
