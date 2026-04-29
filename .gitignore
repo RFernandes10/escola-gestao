@@ -23,6 +23,9 @@ backend/dist/
 
 # Uploads
 backend/uploads/
+
+# Images (allow project images)
+!images/*
 *.jpg
 *.jpeg
 *.png
