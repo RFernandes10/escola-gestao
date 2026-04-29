@@ -32,6 +32,14 @@ Sistema completo de gestão escolar focado no gerenciamento de recursos humanos 
 - Componentes reutilizáveis
 - Feedback visual com notificações toast
 
+## 📸 Screenshots
+
+### Gestão de Funcionários
+![Gestão de Funcionários](./images/gestao.png)
+
+### Dashboard do Sistema
+![Dashboard](./images/gestao1.png)
+
 ## 🛠 Tecnologias Utilizadas
 
 ### Backend
